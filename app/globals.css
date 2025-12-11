@@ -1,26 +1,79 @@
-@import "tailwindcss";
+/* * app/globals.css
+ * ------------------------------------------
+ * Global Stylesheet for Next.js App Router.
+ * This file is crucial for importing Tailwind CSS utility classes
+ * across the entire application via the Root Layout.
+ * * 1. @tailwind directives inject Tailwind's core styles (Base, Components, Utilities).
+ * 2. Custom CSS variables or global resets can be added below the directives.
+ * ------------------------------------------
+ */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Custom CSS/Global variables go here (if needed later) */
+/* ------------------------------------------ */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ------------------------------------------ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bodyColor; /* Use the color we defined in the config */
+  }
+
+  li {
+    @apply list-none;
+  }
+
+  a {
+    @apply no-underline;
+  }
+
+  img,
+  video {
+    @apply w-full h-auto;
+  }
+
+  input {
+    @apply text-[100%];
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Rewrite old classes with Tailwind syntax */
+
+  .container {
+    @apply px-6;
+    @apply laptop:w-[80%] laptop:mx-auto;
+  }
+
+  .section {
+    @apply py-16 px-0;
+    @apply laptop:py-24 laptop:px-[0.4rem];
+  }
+
+  .icon {
+    @apply text-[3rem] cursor-pointer;
+  }
+
+  .btn {
+    @apply px-6 py-[0.6rem] rounded-[3rem] border-none outline-none cursor-pointer bg-gradient-main  hover:bg-secondary transition-all duration-300 ease-in-out;
+  }
+
+  .btn a {
+    @apply text-white font-medium;
+  }
 }
+/* no need to have this peice of code down here since we took care of it i tailwind.config in plugins */
+/* Here we use the desktop defined in the config */
+/* @layer utilities {
+    @screen desktop {
+    body {
+      zoom: 2.4;
+    }
+  }
+} */
