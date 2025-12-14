@@ -43,7 +43,7 @@ const Navbar = () => {
         <div
           className={`navBar ${
             active ? "activeNavbar top-[7rem]" : "top-[-30rem]"
-          } absolute bg-whiteDeam w-[88%] rounded-2xl left-1/2 -translate-x-1/2 p-4 z-[2000] shadow-lg transition-all duration-500 ease-in-out md:static md:w-auto md:bg-transparent md:translate-x-0 md:shadow-none md:p-0 md:flex md:items-center`}
+          } absolute bg-whiteColorDeam w-[88%] rounded-2xl left-1/2 -translate-x-1/2 p-4 z-[2000] shadow-lg transition-all duration-500 ease-in-out md:static md:w-auto md:bg-transparent md:translate-x-0 md:shadow-none md:p-0 md:flex md:items-center`}
         >
           <ul className="navLists flex flex-col justify-center items-center w-full m-auto py-2 gap-4 md:flex-row md:gap-[12px] laptop:gap-8">
             {navmenuitems.map((item, index) => (
