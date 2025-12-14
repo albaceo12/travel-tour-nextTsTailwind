@@ -3,7 +3,7 @@
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 const config: Config = {
-  // 1. حل تداخل کانتینر: کانتینر پیش‌فرض رو خاموش می‌کنیم
+  // This tells Tailwind to not add the 'container' class to the root element.
   corePlugins: {
     container: false,
   },
