@@ -11,7 +11,7 @@ const config: Config = {
   // If you are not using the 'src/' directory, these paths cover the root structure:
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}", // For Pages Router components
-    "./components/**/*.{js,ts,jsx,tsx,mdx}", // Shared components
+    "./Components/**/*.{js,ts,jsx,tsx,mdx}", // Shared components
     "./app/**/*.{js,ts,jsx,tsx,mdx}", // For App Router pages and layouts
     "./src/**/*.{js,ts,jsx,tsx,mdx}", // Includes components that might be inside a 'src/' folder (just in case)
   ],
